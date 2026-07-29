@@ -1,0 +1,9 @@
+name = "big-duct-comedy"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = ".vinext/output"
+
+[build]
+command = "npm run install:ci && npm run build"
+
+[build.environment_variables]
+NODE_VERSION = "22.13.0"
