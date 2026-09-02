@@ -329,7 +329,7 @@ export default function InteractiveReader() {
         {audioMessage}
       </p>
 
-      <article className="active-scene" key={panel.scene}>
+      <article className={`active-scene motion-scene motion-scene-${sceneIndex + 1}`} key={panel.scene}>
         <div className="scene-heading">
           <span>{String(sceneIndex + 1).padStart(2, "0")}</span>
           <div>
