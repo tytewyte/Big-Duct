@@ -13,6 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://bigductcomedy.com",
+  ),
   title: "Big Duct Comedy - Original Blue-Collar Comedy",
   description:
     "Original blue-collar comedy with a clearly separated real-world alert desk. Follow the Big Duct crew through service calls, bad decisions and the kind of jobs nobody warned them about.",
@@ -39,9 +42,6 @@ export const metadata: Metadata = {
     title: "Big Duct Comedy",
     description: "Original blue-collar comedy. A new story every day.",
     images: ["/comic-upstairs-hot.png"],
-  },
-  other: {
-    "codex-preview": "development",
   },
   icons: {
     icon: "/favicon.svg",
