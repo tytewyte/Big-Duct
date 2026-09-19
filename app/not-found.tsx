@@ -1,4 +1,10 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: "That Duct Don't Connect - 404 | Big Duct Comedy",
+  robots: { index: false, follow: true },
+}
 
 export default function NotFound() {
   return (

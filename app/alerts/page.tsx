@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Reality Desk - Live Official Alerts | Big Duct Comedy",
+  description:
+    "Current official warnings from the National Weather Service and USGS, kept clearly separate from Big Duct's fictional comedy.",
+  alternates: { canonical: "/alerts" },
+  openGraph: {
+    title: "Reality Desk - Live Official Alerts",
+    description:
+      "Current official warnings from the National Weather Service and USGS, clearly separated from the comedy.",
+    url: "/alerts",
+  },
+};
 
 type NwsFeature = {
   id: string;
@@ -79,6 +93,7 @@ async function getOfficialAlerts() {
     quakes,
     weatherAvailable: weatherResult.status === "fulfilled",
     quakesAvailable: quakeResult.status === "fulfilled",
+    fetchedAt: Date.now(),
   };
 }
 
@@ -96,7 +111,7 @@ function formatTime(value?: string | number) {
 
 export default async function AlertsPage() {
   const alerts = await getOfficialAlerts();
-  const refreshedAt = formatTime(Date.now());
+  const refreshedAt = formatTime(alerts.fetchedAt);
 
   return (
     <main className="alert-desk">

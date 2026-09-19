@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import InteractiveReader from "./interactive-reader";
+
+export const metadata: Metadata = {
+  title: "The Upstairs Problem - Episode 001 | Big Duct Comedy",
+  description:
+    "Episode 001: the homeowner says her upstairs isn't getting any action, so Big Duct brings the big duct. Six panels of entirely fictional service-call comedy.",
+  alternates: { canonical: "/episodes/upstairs-problem" },
+  openGraph: {
+    title: "The Upstairs Problem - Episode 001",
+    description:
+      "Six panels of entirely fictional service-call comedy from the Big Duct crew.",
+    url: "/episodes/upstairs-problem",
+    images: [{ url: "/comic-upstairs-hot.png", width: 1200, height: 630, alt: "The Upstairs Problem" }],
+  },
+};
 
 export default function UpstairsProblemEpisode() {
   return (
